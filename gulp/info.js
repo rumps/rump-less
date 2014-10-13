@@ -5,6 +5,7 @@ var globule = require('globule');
 var gulp = require('gulp');
 var path = require('path');
 var rump = require('rump');
+var pkg = require('../package');
 
 gulp.task('rump:info:less', function() {
   var glob = path.join(rump.configs.main.paths.source.root,
@@ -30,7 +31,7 @@ gulp.task('rump:info:less', function() {
   }
 
   console.log();
-  console.log(chalk.magenta('--- LESS'));
+  console.log(chalk.magenta('--- LESS', 'v' + pkg.version));
   console.log('Processed LESS files from', chalk.green(source),
               'are', action,
               'to', chalk.green(destination));
