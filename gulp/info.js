@@ -7,7 +7,7 @@ var path = require('path');
 var rump = require('rump');
 var pkg = require('../package');
 
-gulp.task('rump:info:less', function() {
+gulp.task(rump.taskName('info:less'), function() {
   var glob = path.join(rump.configs.main.paths.source.root,
                        rump.configs.main.paths.source.less,
                        rump.configs.main.globs.build.less);
@@ -43,4 +43,4 @@ gulp.task('rump:info:less', function() {
   console.log();
 });
 
-gulp.tasks['rump:info'].dep.push('rump:info:less');
+gulp.tasks[rump.taskName('info')].dep.push(rump.taskName('info:less'));

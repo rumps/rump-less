@@ -9,7 +9,7 @@ var rump = require('rump');
 var sourcemaps = require('gulp-sourcemaps');
 var util = require('gulp-util');
 
-gulp.task('rump:build:less', function() {
+gulp.task(rump.taskName('build:less'), function() {
   var source = path.join(rump.configs.main.paths.source.root,
                          rump.configs.main.paths.source.less,
                          rump.configs.main.globs.build.less);
@@ -26,4 +26,4 @@ gulp.task('rump:build:less', function() {
   .pipe(gulp.dest(destination));
 });
 
-gulp.tasks['rump:build'].dep.push('rump:build:less');
+gulp.tasks[rump.taskName('build')].dep.push(rump.taskName('build:less'));
