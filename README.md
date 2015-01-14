@@ -68,7 +68,7 @@ This specifies any options you want to add to Autoprefixer. (specifically
 #### `options.styles.less`
 This specifies any options you want to override in LESS. (specifically
 [gulp-less](https://github.com/plus3network/gulp-less)) Compression plugin by
-default is inlcuded or excluded based on the minify option above. Default
+default is included or excluded based on the minify option above. Default
 search paths for `@import` are also added, including: `node_modules`,
 `bower_components`, and root source path for styles detailed above.
 
