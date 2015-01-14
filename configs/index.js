@@ -1,10 +1,14 @@
 'use strict';
 
+var AutoprefixPlugin = require('less-plugin-autoprefix');
+var CleanCSSPlugin = require('less-plugin-clean-css');
 var extend = require('extend');
 var path = require('path');
 var rump = require('rump');
 
 exports.rebuild = function() {
+  var plugins = [];
+
   rump.configs.main.globs = extend(true, {
     build: {
       less: '*.less'
@@ -28,8 +32,12 @@ exports.rebuild = function() {
     sourceMap: rump.configs.main.environment === 'development'
   }, rump.configs.main.styles);
 
-  exports.autoprefixer = extend(true, {},
-                                rump.configs.main.styles.autoprefixer);
+  plugins.push(new AutoprefixPlugin(rump.configs.main.styles.autoprefixer));
+
+  if(rump.configs.main.styles.minify) {
+    plugins.push(new CleanCSSPlugin());
+  }
+
   exports.less = extend(true, {
     compress: rump.configs.main.styles.minify,
     paths: [
@@ -37,7 +45,8 @@ exports.rebuild = function() {
       'bower_components',
       path.join(rump.configs.main.paths.source.root,
                 rump.configs.main.paths.source.less)
-    ]
+    ],
+    plugins: plugins
   }, rump.configs.main.styles.less);
 };
 

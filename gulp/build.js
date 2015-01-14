@@ -1,6 +1,5 @@
 'use strict';
 
-var autoprefixer = require('gulp-autoprefixer');
 var gulp = require('gulp');
 var less = require('gulp-less');
 var path = require('path');
@@ -10,9 +9,9 @@ var sourcemaps = require('gulp-sourcemaps');
 var util = require('gulp-util');
 
 gulp.task(rump.taskName('build:less'), function() {
-  var source = path.join(rump.configs.main.paths.source.root,
-                         rump.configs.main.paths.source.less,
-                         rump.configs.main.globs.build.less);
+  var sourcePath = path.join(rump.configs.main.paths.source.root,
+                             rump.configs.main.paths.source.less);
+  var source = path.join(sourcePath, rump.configs.main.globs.build.less);
   var destination = path.join(rump.configs.main.paths.destination.root,
                               rump.configs.main.paths.destination.less);
   var sourceMap = rump.configs.main.styles.sourceMap;
@@ -22,8 +21,9 @@ gulp.task(rump.taskName('build:less'), function() {
     .pipe((rump.configs.watch ? plumber : util.noop)())
     .pipe((sourceMap ? sourcemaps.init : util.noop)())
     .pipe(less(rump.configs.less))
-    .pipe(autoprefixer(rump.configs.autoprefixer))
-    .pipe((sourceMap ? sourcemaps.write : util.noop)())
+    .pipe((sourceMap ? sourcemaps.write : util.noop)({
+      sourceRoot: path.resolve(sourcePath)
+    }))
     .pipe(gulp.dest(destination));
 });
 

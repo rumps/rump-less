@@ -1,5 +1,12 @@
 # Changelog
 
+### 0.6.0
+- Update to match Rump 0.6.0 (pass options)
+- Update `require-all` and `gulp-less`
+- Drop `gulp-autoprefixer`
+- Use LESS plugins for autoprefix and minification
+- Set up absolute paths for source maps
+
 ### 0.5.0
 - Update to match Rump 0.5.0 (use same minor version)
 

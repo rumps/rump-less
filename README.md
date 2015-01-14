@@ -14,7 +14,7 @@ information, visit the
 ## API
 The following is appended to the core Rump API:
 
-### `rump.addGulpTasks()`
+### `rump.addGulpTasks(options)`
 This module adds the following tasks:
 
 - `build:less` will process LESS stylesheets with LESS and Autoprefixer. For
@@ -67,12 +67,12 @@ This specifies any options you want to add to Autoprefixer. (specifically
 
 #### `options.styles.less`
 This specifies any options you want to override in LESS. (specifically
-[gulp-less](https://github.com/plus3network/gulp-less)) Compression by default
-is enabled or disabled based on the minify option above. Default search paths
-for `@import` are also added, including: `node_modules`, `bower_components`,
-and root source path for styles detailed above.
+[gulp-less](https://github.com/plus3network/gulp-less)) Compression plugin by
+default is inlcuded or excluded based on the minify option above. Default
+search paths for `@import` are also added, including: `node_modules`,
+`bower_components`, and root source path for styles detailed above.
 
-### `rump.configs.autoprefixer`, `rump.configs.less`
-This contains the generated options that are passed to Autoprefixer and LESS,
-respectively, in the Gulp task. This is a good way to see what options are
-generated based on defaults and overrides.
+### `rump.configs.less`
+This contains the generated options that are passed to LESS in the Gulp task.
+This is a good way to see what options are generated based on defaults and
+overrides.
