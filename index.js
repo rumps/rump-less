@@ -15,12 +15,6 @@ rump.on('update:main', function() {
   rump.emit('update:less');
 });
 
-Object.defineProperty(rump.configs, 'autoprefixer', {
-  get: function() {
-    return configs.autoprefixer;
-  }
-});
-
 Object.defineProperty(rump.configs, 'less', {
   get: function() {
     return configs.less;
