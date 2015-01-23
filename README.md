@@ -63,7 +63,7 @@ information on environment)
 
 #### `options.styles.autoprefixer`
 This specifies any options you want to add to Autoprefixer. (specifically
-[gulp-autoprefixer](https://github.com/sindresorhus/gulp-autoprefixer))
+[less-plugin-autoprefix](https://github.com/less/less-plugin-autoprefix))
 
 #### `options.styles.less`
 This specifies any options you want to override in LESS. (specifically
