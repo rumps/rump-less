@@ -1,5 +1,8 @@
 # Changelog
 
+#### 0.6.3
+- Use util.log for logging error
+
 #### 0.6.2
 - Fix watch task not rerunning after error
 
