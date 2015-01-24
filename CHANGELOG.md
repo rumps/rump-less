@@ -1,5 +1,8 @@
 # Changelog
 
+#### 0.6.2
+- Fix watch task not rerunning after error
+
 #### 0.6.1
 - Remove autoprefixer export code
 

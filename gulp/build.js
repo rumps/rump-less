@@ -20,7 +20,11 @@ gulp.task(rump.taskName('build:less'), function() {
     .src([source].concat(rump.configs.main.globs.global))
     .pipe((rump.configs.watch ? plumber : util.noop)())
     .pipe((sourceMap ? sourcemaps.init : util.noop)())
-    .pipe(less(rump.configs.less))
+    .pipe(less(rump.configs.less).on('error', function(err) {
+      var pluginErr = new util.PluginError(rump.taskName('build:less'), err);
+      console.log(pluginErr.toString());
+      this.emit('end');
+    }))
     .pipe((sourceMap ? sourcemaps.write : util.noop)({
       sourceRoot: path.resolve(sourcePath)
     }))
