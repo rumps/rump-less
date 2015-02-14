@@ -1,5 +1,8 @@
 # Changelog
 
+#### 0.6.4
+- Update `gulp-less`
+
 #### 0.6.3
 - Use util.log for logging error
 
