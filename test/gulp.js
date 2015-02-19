@@ -67,6 +67,7 @@ describe('rump less tasks', function() {
     gulp.task('postbuild', ['spec:watch'], function() {
       var firstResult = fs.readFileSync('tmp/index.css').toString();
       assert(~firstResult.indexOf('display: flex'));
+      assert(~firstResult.indexOf('display: -webkit-flex'));
       timeout(function() {
         fs.writeFileSync('test/src/lib/variables.less', '@color: black;');
         timeout(function() {
