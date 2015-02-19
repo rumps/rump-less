@@ -1,9 +1,10 @@
 # Changelog
 
+#### 0.6.5
+- Switch back to `gulp-autoprefixer`
+
 #### 0.6.4
 - Update `gulp-less`
-
-#### 0.6.3
 - Use util.log for logging error
 
 #### 0.6.2
