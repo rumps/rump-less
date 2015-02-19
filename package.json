@@ -9,7 +9,7 @@
     "type": "git",
     "url": "https://github.com/rumps/rump-less"
   },
-  "main": "./index.js",
+  "main": "./lib",
   "dependencies": {
     "chalk": "^0.5.1",
     "extend": "^2.0.0",
