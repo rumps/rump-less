@@ -1,8 +1,8 @@
 # Rump LESS
 [![NPM](http://img.shields.io/npm/v/rump-less.svg?style=flat-square)](https://www.npmjs.org/package/rump-less)
 ![License](http://img.shields.io/npm/l/rump-less.svg?style=flat-square)
-[![Travis](http://img.shields.io/travis/rumps/rump-less.svg?style=flat-square)](https://travis-ci.org/rumps/rump-less)
-[![Appveyor](http://img.shields.io/appveyor/ci/jupl/rump-less.svg?style=flat-square)](https://ci.appveyor.com/project/jupl/rump-less)
+[![Travis](http://img.shields.io/travis/rumps/rump-less.svg?style=flat-square&label=travis)](https://travis-ci.org/rumps/rump-less)
+[![Appveyor](http://img.shields.io/appveyor/ci/jupl/rump-less.svg?style=flat-square&label=appveyor)](https://ci.appveyor.com/project/jupl/rump-less)
 [![Dependencies](http://img.shields.io/david/rumps/rump-less.svg?style=flat-square)](https://david-dm.org/rumps/rump-less)
 [![Dev Dependencies](http://img.shields.io/david/dev/rumps/rump-less.svg?style=flat-square)](https://david-dm.org/rumps/rump-less#info=devDependencies)
 
