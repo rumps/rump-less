@@ -8,6 +8,7 @@ Object.getPrototypeOf.toString = function() {
 var assert = require('assert');
 var bufferEqual = require('buffer-equal');
 var co = require('co');
+var convert = require('convert-source-map');
 var fs = require('mz/fs');
 var gulp = require('gulp');
 var util = require('gulp-util');
@@ -15,6 +16,7 @@ var path = require('path');
 var sinon = require('sinon');
 var sleep = require('timeout-then');
 var rump = require('../lib');
+var protocol = process.platform === 'win32' ? 'file:///' : 'file://';
 
 describe('rump less tasks', function() {
   beforeEach(function() {
@@ -98,6 +100,15 @@ describe('rump less tasks', function() {
       var content = yield fs.readFile('tmp/index.css');
       assert(content.toString().includes('display: flex'));
       assert(content.toString().includes('display: -webkit-flex'));
+    }));
+
+    it('handles source maps in development', co.wrap(function*() {
+      var content = yield fs.readFile('tmp/index.css');
+      var sourceMap = convert.fromSource(content.toString());
+      var exists = yield sourceMap.getProperty('sources').map(function(url) {
+        return fs.exists(url.replace(protocol, '').split('/').join(path.sep));
+      });
+      exists.forEach(assert);
     }));
 
     it('handles minification in production', co.wrap(function*() {

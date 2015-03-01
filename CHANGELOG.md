@@ -1,5 +1,8 @@
 # Changelog
 
+#### 0.6.6
+- Rewrite source map
+
 #### 0.6.5
 - Switch back to `gulp-autoprefixer`
 
