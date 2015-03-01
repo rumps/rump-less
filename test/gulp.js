@@ -106,9 +106,9 @@ describe('rump less tasks', function() {
       var content = yield fs.readFile('tmp/index.css');
       var sourceMap = convert.fromSource(content.toString());
       var exists = yield sourceMap
-        .getProperty('sources')
-        .filter(identity)
-        .map(checkIfExists);
+            .getProperty('sources')
+            .filter(identity)
+            .map(checkIfExists);
       exists.forEach(assert);
     }));
 
