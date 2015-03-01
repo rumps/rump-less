@@ -105,9 +105,10 @@ describe('rump less tasks', function() {
     it('handles source maps in development', co.wrap(function*() {
       var content = yield fs.readFile('tmp/index.css');
       var sourceMap = convert.fromSource(content.toString());
-      var exists = yield sourceMap.getProperty('sources').map(function(url) {
-        return fs.exists(url.replace(protocol, '').split('/').join(path.sep));
-      });
+      var exists = yield sourceMap
+        .getProperty('sources')
+        .filter(identity)
+        .map(checkIfExists);
       exists.forEach(assert);
     }));
 
@@ -133,4 +134,12 @@ function hasVariablesFile(log) {
 
 function hasPaths(log) {
   return log.includes(path.join('test', 'src')) && log.includes('tmp');
+}
+
+function identity(x) {
+  return x;
+}
+
+function checkIfExists(url) {
+  return fs.exists(url.replace(protocol, '').split('/').join(path.sep));
 }
