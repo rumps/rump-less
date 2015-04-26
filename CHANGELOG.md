@@ -2,6 +2,7 @@
 
 #### 0.6.7
 - Simplify source map / autoprefixer code
+- Update `convert-source-map` and `gulp-plumber`
 
 #### 0.6.6
 - Rewrite source map
