@@ -2,7 +2,7 @@
   "name": "rump-less",
   "description": "Rump piece for building CSS from LESS",
   "author": "Juan Placencia",
-  "version": "0.6.6",
+  "version": "0.6.7",
   "license": "MIT",
   "homepage": "https://github.com/rumps/rump-less",
   "repository": {

@@ -1,5 +1,8 @@
 # Changelog
 
+#### 0.6.7
+- Simplify source map / autoprefixer code
+
 #### 0.6.6
 - Rewrite source map
 
