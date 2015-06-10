@@ -1,5 +1,8 @@
 # Changelog
 
+#### 0.6.8
+- Update packages
+
 #### 0.6.7
 - Simplify source map / autoprefixer code
 - Update `convert-source-map` and `gulp-plumber`
